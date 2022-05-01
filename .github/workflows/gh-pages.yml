@@ -31,4 +31,4 @@ jobs:
           publish_dir: ./public
       
       - name: Test Hugo deployment
-        run: sh ./hugo.sh
+        run: bash $(pwd)/hugo.sh
