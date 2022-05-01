@@ -31,4 +31,4 @@ jobs:
           publish_dir: ./public
       
       - name: Test Hugo deployment
-        run: bash $(pwd)/hugo.sh
+        run: bash "${GITHUB_WORKSPACE}/.github/workflows/hugo.sh"
