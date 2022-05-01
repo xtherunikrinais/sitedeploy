@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Test Hugo deployment
-        run: bash "${GITHUB_WORKSPACE}/.github/workflows/hugo.sh"
+        run: bash "${GITHUB_WORKSPACE}/.github/hugo.sh"
 
       - uses: actions/checkout@v2
         with:
