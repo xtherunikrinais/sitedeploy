@@ -12,9 +12,8 @@ jobs:
       - name: Test Hugo deployment
         run: bash "${GITHUB_WORKSPACE}/.github/workflows/hugo.sh"
 
-      - name: Actions@checkout
-        uses: actions/checkout@v2
-          with:
+      - uses: actions/checkout@v2
+        with:
             submodules: true
             fetch-depth: 0
 
