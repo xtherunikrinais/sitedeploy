@@ -9,9 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - name: Test Hugo deployment
-        run: bash "${GITHUB_WORKSPACE}/.github/hugo.sh"
-
       - uses: actions/checkout@v2
         with:
             submodules: true
@@ -25,6 +22,9 @@ jobs:
       
       - name: Build
         run: hugo --minify
+
+      - name: Test Hugo deployment
+        run: bash "${GITHUB_WORKSPACE}/hugo.sh"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
